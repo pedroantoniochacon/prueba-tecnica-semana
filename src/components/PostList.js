@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../css/PostList.css'; // Importa los estilos CSS
+import '../css/PostList.css'; 
 import CommentsModal from './CommentsModal';
 
 const PostList = () => {
@@ -17,7 +17,7 @@ const PostList = () => {
             try {
                 const response = await axios.get(`https://dummyapi.io/data/v1/post?page=${page}&limit=${pageSize}`, {
                     headers: {
-                        'app-id': '66395de48ac6e15e5ad6466a' // Reemplaza 'your-app-id' con tu clave de API
+                        'app-id': '66395de48ac6e15e5ad6466a' 
                     }
                 });
                 setPosts(response.data.data);
@@ -41,10 +41,10 @@ const PostList = () => {
 
     const handleTagSelection = (tag) => {
         if (selectedTags.includes(tag)) {
-            // Si el tag ya está seleccionado, lo eliminamos
+  
             setSelectedTags(selectedTags.filter(selectedTag => selectedTag !== tag));
         } else {
-            // Si el tag no está seleccionado, lo agregamos
+        
             setSelectedTags([...selectedTags, tag]);
         }
     };
@@ -53,7 +53,6 @@ const PostList = () => {
         return selectedTags.some(tag => post.tags.includes(tag));
     }) : posts;
 
-    // Extraer tags únicos de los posts
     const allTags = posts.reduce((acc, post) => {
         post.tags.forEach(tag => {
             if (!acc.includes(tag)) {
@@ -67,7 +66,7 @@ const PostList = () => {
         try {
             const response = await axios.get(`https://dummyapi.io/data/v1/post/${postId}/comment`, {
                 headers: {
-                    'app-id': '66395de48ac6e15e5ad6466a' // Reemplaza 'your-app-id' con tu clave de API
+                    'app-id': '66395de48ac6e15e5ad6466a' // 
                 }
             });
             setComments(response.data.data);
