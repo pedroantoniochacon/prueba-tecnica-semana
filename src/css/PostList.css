@@ -1,0 +1,177 @@
+/* app.css */
+
+.post-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin-left: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  
+  .botones{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+
+.card {
+  width: 22rem;
+  height: 33rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 6px;
+  color: rgb(26, 26, 26);
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+ 
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
+  }
+
+  h2 {
+    position: absolute;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.651);
+    min-width: 80%;
+    border-radius: 20px;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset .3s .3s ease-out;;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  p{
+    position: absolute;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.651);
+    border-radius: 20px;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity .3s ease-out;
+  }
+  h4 {
+    position: absolute;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.651);
+    border-radius: 20px;
+    opacity: 0;
+    min-width: 80%;
+    transition: opacity .3s ease-out;
+  }
+  
+  p{
+    inset: auto auto 80px 30px;
+  }
+  h4{
+    inset: auto auto 20px 30px;
+  }
+  
+  &:hover h2 {
+    inset: auto auto 220px 30px;
+    transition: inset .3s ease-out;
+  }
+  
+  &:hover p, &:hover h4 {
+    opacity: 1;
+    transition: opacity .5s .1s ease-in;
+  }
+  
+  &:hover img {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+  }
+
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+.boton-1{
+  display: inline-flex;
+	align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+	justify-content: center;
+	width: 20%;
+	height: 40px;
+	background: #ffffffd7;
+	color: #000000;
+	font-size: 20px;
+	font-weight: 500;
+	border: solid  #000000;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: .3s ease all;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+}
+
+
+
+.boton-1::after {
+	content: "";
+	width: 90%;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: calc(-100% - 80px);
+	border-bottom: 80px solid #1bc74f73;
+	border-right: 80px solid transparent;
+	transition: .4s ease-in-out all;
+}
+
+.boton-1:hover::after {
+	left: 0;
+}
+
+.filtro-perros{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin-left: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filtro-perros button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  margin-left: 10px;
+  margin-top: 9px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #eee; /* Color de fondo predeterminado */
+  color: #333; /* Color de texto predeterminado */
+}
+
+/* Estilos para los botones seleccionados */
+.filtro-perros button.selected {
+  background-color: green; /* Cambia el color de fondo a verde */
+  color: white; /* Cambia el color de texto a blanco */
+}
+
